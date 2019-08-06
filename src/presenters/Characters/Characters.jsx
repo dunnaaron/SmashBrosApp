@@ -5,13 +5,12 @@ function Characters() {
   const [allCharacters, setAllCharacters] = useState([]);
 
   useEffect(() => {
-    fetch('http://beta-api-kuroganehammer.azurewebsites.net/api/characters')
+    fetch('https://api.kuroganehammer.com/api/characters?game=ultimate')
     .then(results => results.json())
     .then(data => {
         setAllCharacters(data);
     })
   }, [])
-
 
   return <div>
     <h1>Characters</h1>
