@@ -18,7 +18,12 @@ const Characters = () => {
     <div className='characters'>
       {
         sortCharacterByName(allCharacters)
-          .map((character, index) => <div className='fighter' key={index}>{character}</div>)
+          .map((character, index) => {
+            return <div key={index}>
+              <img src={character.thumbnail} className='thumbnail'/>
+              <div className='fighter'>{character.name}</div>
+            </div>
+          })
       }
     </div>
   </div>
@@ -26,8 +31,8 @@ const Characters = () => {
 
 const sortCharacterByName = (allCharacters) => {
   return allCharacters
-    .map(character => character.DisplayName)
-    .sort()
+    .map(character => ({ name: character.DisplayName, thumbnail: character.ThumbnailUrl, fullPhoto: character.MainImageUrl }))
+    .sort(character => character.DisplayName)
 }
 
 export default Characters
