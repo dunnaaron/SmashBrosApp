@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import './characters.css'
 
-function Characters() {
+const Characters = () => {
 
   const [allCharacters, setAllCharacters] = useState([]);
 
@@ -14,10 +15,19 @@ function Characters() {
 
   return <div>
     <h1>Characters</h1>
-    {
-      allCharacters.map((character, index) => <div key={index}>{character.DisplayName}</div>)
-    }
+    <div className='characters'>
+      {
+        sortCharacterByName(allCharacters)
+          .map((character, index) => <div className='fighter' key={index}>{character}</div>)
+      }
+    </div>
   </div>
+}
+
+const sortCharacterByName = (allCharacters) => {
+  return allCharacters
+    .map(character => character.DisplayName)
+    .sort()
 }
 
 export default Characters
