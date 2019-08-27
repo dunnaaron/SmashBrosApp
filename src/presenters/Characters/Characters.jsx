@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './characters.css'
 
-const Characters = () => {
+const Characters = ({ setCurrentFighter, selectedCurrentFighter }) => {
 
   const [allCharacters, setAllCharacters] = useState([]);
 
@@ -15,12 +15,13 @@ const Characters = () => {
 
   return <div>
     <h1>Characters</h1>
+    <h2>Selected Fighter: {selectedCurrentFighter && selectedCurrentFighter.name}</h2>
     <div className='characters'>
       {
         sortCharacterByName(allCharacters)
           .map((character, index) => {
             return <div key={index}>
-              <img src={character.thumbnail} className='thumbnail'/>
+              <img src={character.thumbnail} className='thumbnail' onClick = {() => setCurrentFighter(character)}/>
               <div className='fighter'>{character.name}</div>
             </div>
           })

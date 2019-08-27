@@ -1,11 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import ParentComponentConnector from './connectors/ParentComponentConnector'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import reducer from './reducers/reducer.js'
+import CharacterConnector from './connectors/CharacterConnector';
 
-const store = createStore(reducer)
+const store = createStore(
+  reducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
 window.store = store
 
-ReactDOM.render(<Provider store={store}><ParentComponentConnector /></Provider>, document.getElementById('mount'));
+ReactDOM.render(<Provider store={store}><CharacterConnector /></Provider>, document.getElementById('mount'));
