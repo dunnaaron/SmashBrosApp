@@ -5,7 +5,7 @@ h1 {
   font-weight: bold;
   text-align: center;
 }
-.characters {
+.fighters {
   font-family: 'Noto Sans', sans-serif;
   display: grid;
   grid-template-columns: auto auto auto;
