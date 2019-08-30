@@ -19,4 +19,4 @@ ReactDOM.render(
     <Route path="/" exact component={FighterConnector} />
     <Route path="/Fighter-info" component={FighterInfoConnector} />
   </Router>
-</Provider>, document.getElementById('mount'));
+</Provider>, document.getElementById('root'));
