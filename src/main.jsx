@@ -9,9 +9,9 @@ import FighterInfoConnector from './connectors/FighterInfoConnector/FighterInfoC
 
 const store = createStore(
   reducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() //This line allows use of the redux debugger
 )
-window.store = store
+window.store = store //What does this do?
 
 ReactDOM.render(
 <Provider store={store}>
