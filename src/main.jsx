@@ -6,6 +6,7 @@ import { Provider } from 'react-redux'
 import reducer from './reducers/reducer.js'
 import FighterConnector from './connectors/FighterConnector';
 import FighterInfoConnector from './connectors/FighterInfoConnector/FighterInfoConnector.jsx';
+import './global.css'
 
 const store = createStore(
   reducer,

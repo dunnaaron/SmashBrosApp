@@ -16,7 +16,7 @@ const Fighters = ({ setCurrentFighter, selectedCurrentFighter }) => {
   }, [])
 
   return <div>
-    <h1>Fighters</h1>
+    <h1 className='page-title'>Fighters</h1>
     <h2>Fighter: {selectedCurrentFighter && selectedCurrentFighter.DisplayName}</h2>
     <Link to="/Fighter-info">
       <button>Fighter's Page</button>
