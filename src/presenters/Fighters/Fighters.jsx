@@ -18,20 +18,26 @@ const Fighters = ({ setCurrentFighter, selectedCurrentFighter }) => {
   return <div>
     <h1 className='page-title'>Fighters</h1>
     <h2>Fighter: {selectedCurrentFighter && selectedCurrentFighter.DisplayName}</h2>
-    <Link to="/Fighter-info">
-      <button>Fighter's Page</button>
+    <Link className='fighter-info-link' to="/Fighter-info">
+      <button className='fighter-page-button'>Fighter's Page</button>
     </Link>
-    <div className='Fighters'>
-      {
-        sortFighterByName(allFighters)
-          .map((Fighter, index) => {
-            return <div key={index}>
-              <img src={Fighter.ThumbnailUrl} className='thumbnail' onClick = {() => setCurrentFighter(Fighter)}/>
-              <div className='fighter'>{Fighter.DisplayName}</div>
-            </div>
-          })
-      }
+    
+    <div className='all-fighters'>
+      <div className='fighters'>
+        {
+          sortFighterByName(allFighters)
+            .map((Fighter, index) => {
+              return <div key={index} className='fighter-container'>
+                <img src={Fighter.ThumbnailUrl} className='thumbnail'  />
+                <div className='fighter' onClick = {() => setCurrentFighter(Fighter)}>
+                  <div>{Fighter.DisplayName}</div>
+                </div>
+              </div>
+            })
+        }
+      </div>
     </div>
+    
   </div>
 }
 
