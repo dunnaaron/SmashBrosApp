@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom";
-import './Fighters.css'
+import './fighters.css'
 import placeholder from '../../assets/sakurai.png'
 
 const Fighters = ({ setCurrentFighter, selectedCurrentFighter }) => {
