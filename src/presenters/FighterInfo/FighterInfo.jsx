@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import NavBar from '../NavBar/NavBar.jsx'
 import './fighter-info.css'
 
 const FighterInfo = ({ fighter }) => {
@@ -13,6 +14,7 @@ const FighterInfo = ({ fighter }) => {
   }, [])
 
   return <div className="fighter-page">
+    <NavBar />
     <h1 className='page-title'>{fighter.DisplayName}</h1>
     <div className='move-details'>
       <div className='moves-column-title'>
