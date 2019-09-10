@@ -40,9 +40,6 @@ const FighterInfo = ({ fighter }) => {
   </div>
 }
 
-const formattedUrlName = (fighter) => {
-  var formattedName = fighter.DisplayName === 'Banjo & Kazooie' ? 'Banjo-Kazooie' : fighter.DisplayName.replace(/[^0-9a-z]/gi, '')
-  return formattedName === 'PiranhaPlant' ? 'Piranha%20Plant' : formattedName
-}
+const formattedUrlName = (fighter) => (fighter.DisplayName.replace(/[^0-9a-z]/gi, ''))
 
 export default FighterInfo

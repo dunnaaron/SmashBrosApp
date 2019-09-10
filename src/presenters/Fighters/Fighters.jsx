@@ -6,7 +6,7 @@ import placeholder from '../../assets/sakurai.png'
 const Fighters = ({ setCurrentFighter, selectedCurrentFighter }) => {
 
   const [allFighters, setAllFighters] = useState([]);
-  const missingFighterThumbnails = ['Joker', 'Hero', 'Ridley', 'Banjo & Kazooie']
+  const missingFighterThumbnails = ['Joker', 'Hero', 'Ridley', 'Banjo & Kazooie', 'Piranha Plant']
 
   useEffect(() => {
     fetch('https://api.kuroganehammer.com/api/characters?game=ultimate')
