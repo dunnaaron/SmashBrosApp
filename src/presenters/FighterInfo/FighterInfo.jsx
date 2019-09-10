@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import './fighter-info.css'
 
 const FighterInfo = ({ fighter }) => {
   const [fighterMoveData, setFighterMoveData] = useState([]);
@@ -11,17 +12,29 @@ const FighterInfo = ({ fighter }) => {
     })
   }, [])
 
-  console.log('rendering Fighter info page', fighterMoveData)
-
-  return <div className="FighterInfo">
-    <h1>{fighter.DisplayName}</h1>
-    {
-      fighterMoveData.map((move, index) => {
-        return <div>
-          <div>{index + 1}. {move.Name}: {move.BaseDamage}</div>
+  return <div className="fighter-page">
+    <h1 className='page-title'>{fighter.DisplayName}</h1>
+    <div className='move-details'>
+      <div className='moves-column-title'>
+        <div className='all-column-titles'>
+          <div className='column-title'>Name</div>
+          <div className='column-title'>Base Damage</div>
+          <div className='column-title'>Move Type</div>
         </div>
-      })
-    }
+        
+      </div>
+      <div className='moves-rows'>
+        {
+          fighterMoveData.map((move, index) => (
+          <div key={index} className='moves-row'>
+            <div className='column-info'>{move.Name}</div>
+            <div className='column-info'>{move.BaseDamage}</div>
+            <div className='column-info'>{move.MoveType}</div>
+          </div>))
+        }
+      </div>
+    </div>
+
   </div>
 }
 
