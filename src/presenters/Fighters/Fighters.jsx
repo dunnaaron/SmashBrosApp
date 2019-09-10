@@ -17,7 +17,6 @@ const Fighters = ({ setCurrentFighter, selectedCurrentFighter }) => {
   }, [])
 
   return <div>
-    <h1 className='page-title'>Fighters</h1>
     <div className='all-fighters'>
       <div className='fighters'>
         {
