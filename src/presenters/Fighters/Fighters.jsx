@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import FighterInfo from '../FighterInfo'
+import { Link } from "react-router-dom";
 import './Fighters.css'
+import placeholder from '../../assets/sakurai.png'
 
 const Fighters = ({ setCurrentFighter, selectedCurrentFighter }) => {
 
   const [allFighters, setAllFighters] = useState([]);
+  const missingFighterThumbnails = ['Joker', 'Hero', 'Ridley']
 
   useEffect(() => {
     fetch('https://api.kuroganehammer.com/api/characters?game=ultimate')
@@ -17,22 +18,22 @@ const Fighters = ({ setCurrentFighter, selectedCurrentFighter }) => {
 
   return <div>
     <h1 className='page-title'>Fighters</h1>
-    <h2>Fighter: {selectedCurrentFighter && selectedCurrentFighter.DisplayName}</h2>
-    <Link className='fighter-info-link' to="/Fighter-info">
-      <button className='fighter-page-button'>Fighter's Page</button>
-    </Link>
-    
     <div className='all-fighters'>
       <div className='fighters'>
         {
           sortFighterByName(allFighters)
-            .map((Fighter, index) => {
-              return <div key={index} className='fighter-container'>
-                <img src={Fighter.ThumbnailUrl} className='thumbnail'  />
-                <div className='fighter' onClick = {() => setCurrentFighter(Fighter)}>
-                  <div>{Fighter.DisplayName}</div>
+            .map((fighter, index) => {
+              return <Link className='fighter-info-link' to="/Fighter-info">
+                <div key={index} className='fighter-container'>
+                  <img
+                    src={missingFighterThumbnails.includes(fighter.DisplayName) ? placeholder : fighter.ThumbnailUrl}
+                    className='thumbnail' 
+                  />
+                  <div className='fighter' onClick = {() => setCurrentFighter(fighter)}>
+                    <div>{fighter.DisplayName}</div>
+                  </div>
                 </div>
-              </div>
+              </Link>
             })
         }
       </div>
