@@ -4,10 +4,9 @@ import './fighter-info.css'
 
 const FighterInfo = ({ fighter }) => {
   const [fighterMoveData, setFighterMoveData] = useState([]);
-  const urlFormattedName = fighter.DisplayName.replace(/[^0-9a-z]/gi, '')
 
   useEffect(() => {
-    fetch(`https://api.kuroganehammer.com/api/characters/name/${urlFormattedName}/moves?game=ultimate`)
+    fetch(`https://api.kuroganehammer.com/api/characters/name/${formattedUrlName(fighter)}/moves?game=ultimate`)
     .then(results => results.json())
     .then(data => {
         setFighterMoveData(data);
@@ -40,5 +39,9 @@ const FighterInfo = ({ fighter }) => {
 
   </div>
 }
+
+const formattedUrlName = (fighter) => (
+  fighter.DisplayName === 'Banjo & Kazooie' ? 'Banjo-Kazooie' : fighter.DisplayName.replace(/[^0-9a-z]/gi, '')
+)
 
 export default FighterInfo
