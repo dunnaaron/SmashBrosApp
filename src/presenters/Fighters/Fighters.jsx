@@ -23,7 +23,7 @@ const Fighters = ({ setCurrentFighter, selectedCurrentFighter }) => {
           sortFighterByName(allFighters)
             .map((fighter, index) => {
               return <Link className='fighter-info-link' to="/Fighter-info">
-                <div key={index} className='fighter-container'>
+                <div className='fighter-container' key={index}>
                   <img
                     src={missingFighterThumbnails.includes(fighter.DisplayName) ? placeholder : fighter.ThumbnailUrl}
                     className='thumbnail' 
@@ -37,7 +37,6 @@ const Fighters = ({ setCurrentFighter, selectedCurrentFighter }) => {
         }
       </div>
     </div>
-    
   </div>
 }
 
