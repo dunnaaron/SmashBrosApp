@@ -38,7 +38,6 @@ const FighterInfo = ({ fighter }) => {
   </div>
 }
 
-const formattedUrlName = (fighter) => (fighter.DisplayName.replace(/[^0-9a-z$]/gi, ''))
-
+const formattedUrlName = (fighter) => (fighter.DisplayName.replace(/[^0-9a-z]/gi, ''))
 
 export default FighterInfo
