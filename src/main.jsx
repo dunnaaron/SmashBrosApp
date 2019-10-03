@@ -5,8 +5,10 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import reducer from './reducers/reducer.js'
 import FighterInfoConnector from './connectors/FighterInfoConnector/FighterInfoConnector.jsx';
+import About from './presenters/About/About.jsx';
 import './global.css'
 import Home from './presenters/Home/Home.jsx';
+
 
 const store = createStore(
   reducer,
@@ -19,5 +21,6 @@ ReactDOM.render(
   <Router>
     <Route path="/" exact component={Home} />
     <Route path="/Fighter-info" component={FighterInfoConnector} />
+    <Route path='/About' component={About} />
   </Router>
 </Provider>, document.getElementById('root'));

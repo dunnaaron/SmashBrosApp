@@ -18,3 +18,12 @@
   width: 40%;
   align-items: center;
 }
+
+.nav-item {
+  text-decoration: none;
+  color: black; 
+}
+
+.nav-item:hover {
+  font-weight: bold;
+}

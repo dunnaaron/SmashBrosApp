@@ -7,15 +7,19 @@ import { Link } from "react-router-dom";
 const NavBar = () => (
   <div className='nav-bar'>
     <div>
-      <Link className='fighters-link' to="/">
+      <Link className='logo-link' to="/">
         <img src={logo} className='logo'/>
       </Link>   
     </div>
     <div className='nav-items'>
-      <div>Home</div>
+      <Link className='nav-item' to='/'>
+        <div>Home</div>
+      </Link>
       <div>Calculators</div>
       <div>Register</div>
-      <div>Pokedex</div>
+      <Link className='nav-item' to='/About'>
+        <div>About</div>
+      </Link>
     </div>
   </div>
 )
