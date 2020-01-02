@@ -6,19 +6,15 @@ import placeholder from '../../assets/sakurai.png'
 const Fighters = ({ setCurrentFighter, selectedCurrentFighter }) => {
 
   const [allFighters, setAllFighters] = useState([]);
-  const missingFighterThumbnails = ['Joker', 'Hero', 'Banjo & Kazooie']
+  const missingFighterThumbnails = ['Joker', 'Hero', 'Banjo & Kazooie', 'Terry']
 
   useEffect(() => {
     fetch('https://api.kuroganehammer.com/api/characters?game=ultimate')
     .then(results => results.json())
-    .then(data => {
-        setAllFighters(data);
-    })
+    .then(data => setAllFighters(data))
   }, [])
 
-  return <div>
-    <div className='all-fighters'>
-      <div className='fighters'>
+  return <div className='fighters'>
         { 
           sortFighterByName(allFighters)
             .map((fighter, index) => {
@@ -35,9 +31,7 @@ const Fighters = ({ setCurrentFighter, selectedCurrentFighter }) => {
               </Link>
             })
         }
-      </div>
     </div>
-  </div>
 }
 
 const sortFighterByName = (allFighters) => {
