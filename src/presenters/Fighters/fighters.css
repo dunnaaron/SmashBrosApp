@@ -1,10 +1,6 @@
-.all-fighters {
-  display: flex;
-  justify-content: center;
-}
-
 .fighter-info-link {
   text-decoration: none;
+  width: 100%;
 }
 
 .fighter-page-button {
@@ -18,8 +14,9 @@
 }
 .fighters {
   font-family: 'Noto Sans', sans-serif;
-  display: inline-grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   border-style: solid;
   border-width: 1px;
   border-color: #DDDDDD;
@@ -57,4 +54,5 @@
 
 .thumbnail {
   border: 1px solid #DDDDDD;
+  width: 100%;
 }
