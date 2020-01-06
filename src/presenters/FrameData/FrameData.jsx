@@ -6,9 +6,7 @@ const FrameData = ({fighter}) => {
   useEffect(() => {
     fetch(`https://api.kuroganehammer.com/api/characters/name/${formattedUrlName(fighter)}/moves?game=ultimate`)
     .then(results => results.json())
-    .then(data => {
-        setFighterMoveData(data);
-    })
+    .then(data => setFighterMoveData(data))
   }, [])
 
   return <div className='moves-rows'>
