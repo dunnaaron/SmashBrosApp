@@ -2,25 +2,31 @@ import React from 'react';
 import logo from '../../assets/ssbu-logo.png'
 import './nav-bar.css';
 import { Link } from "react-router-dom";
+import Hamburger from '../Hamburger/Hamburger';
 
 
 const NavBar = () => (
   <div className='nav-bar'>
-    <div>
-      <Link className='logo-link' to="/">
-        <img src={logo} className='logo'/>
-      </Link>   
-    </div>
-    <div className='nav-items'>
-      <Link className='nav-item' to='/'>
-        <div>Home</div>
-      </Link>
-      <div>Calculators</div>
-      <div>Register</div>
-      <Link className='nav-item' to='/About'>
-        <div>About</div>
-      </Link>
-    </div>
+    <Link className='logo-link' to="/">
+      <img src={logo} className='logo'/>
+    </Link>   
+    <DesktopNavBar logo={logo} />
+    <MobileNavBar />
+  </div>
+)
+
+const DesktopNavBar = ({logo}) => (
+  <div className='nav-items desktop'>
+    <Link className='nav-item' to='/'>Home</Link>
+    <Link className='nav-item' to='/'>Calculators</Link>
+    <Link className='nav-item' to='/'>Register</Link>
+    <Link className='nav-item' to='/About'>About</Link>
+  </div>
+)
+
+const MobileNavBar = () => (
+  <div className='mobile'>
+    <Hamburger />
   </div>
 )
 
