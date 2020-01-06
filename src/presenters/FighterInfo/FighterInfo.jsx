@@ -26,12 +26,20 @@ const FighterInfo = ({ fighter }) => {
       </div>
       <div className='moves-rows'>
         {
-          fighterMoveData.map((move, index) => (
-          <div key={index} className='moves-row'>
-            <div className='column-info'>{move.Name}</div>
-            <div className='column-info'>{move.BaseDamage}</div>
-            <div className='column-info'>{move.MoveType}</div>
-          </div>))
+          fighterMoveData.map((move, index) => {
+            return fighter.DisplayName === 'Roy' ? 
+            <div key={index} className='moves-row'>
+              <div className='column-info'>{move.Name}</div>
+              <div className='column-info'></div>
+              <div className='column-info'>{move.MoveType}</div>
+            </div> :
+            <div key={index} className='moves-row'>
+              <div className='column-info'>{move.Name}</div>
+              <div className='column-info'>{move.BaseDamage}</div>
+              <div className='column-info'>{move.MoveType}</div>
+            </div>
+            }
+          )
         }
       </div>
     </div>
