@@ -37,8 +37,10 @@
   }
 
   .mobile {
+    z-index: 9999;
+
     @media (min-width: 900px) {
         display: none;
-      }
+    }
   }
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '../../assets/ssbu-logo.png'
 import './nav-bar.scss';
 import { Link } from "react-router-dom";
-import Hamburger from '../Hamburger/Hamburger';
+import HamburgerConnector from '../../connectors/HamburgerConnector';
 
 
 const NavBar = () => (
@@ -26,7 +26,7 @@ const DesktopNavBar = ({logo}) => (
 
 const MobileNavBar = () => (
   <div className='mobile'>
-    <Hamburger />
+    <HamburgerConnector />
   </div>
 )
 
