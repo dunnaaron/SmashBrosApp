@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import './frame-data.scss'
 
 const FrameData = ({fighter}) => {
   const [fighterMoveData, setFighterMoveData] = useState([]);

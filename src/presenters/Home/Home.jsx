@@ -1,6 +1,7 @@
 import React from 'react'
 import NavBar from '../NavBar/NavBar.jsx';
 import FighterConnector from '../../connectors/FighterConnector';
+import './home.scss'
 
 const Home = () => (
   <>
