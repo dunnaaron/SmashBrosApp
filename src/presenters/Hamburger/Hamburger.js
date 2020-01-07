@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './hamburger.css'
 
 // const Hamburger = () => {
@@ -10,11 +10,15 @@ import './hamburger.css'
 // }
 
 const Hamburger = () => {
-  return <div class='hamburger'>
-      <div />
-      <div />
-      <div />
-  </div>
+  const [isExpanded, setExpanded] = useState(false)
+
+  const expanded = isExpanded ? 'expanded' : '';
+
+  return <button className='hamburger' onClick={() => setExpanded(!isExpanded)}>
+      <div className={`bar top ${expanded}`}/>
+      <div className={`bar middle ${expanded}`}/>
+      <div className={`bar bottom ${expanded}`}/>
+  </button>
 }
 
 export default Hamburger
