@@ -6,7 +6,7 @@ import { Provider } from 'react-redux'
 import reducer from './reducers/reducer.js'
 import FighterInfoConnector from './connectors/FighterInfoConnector/FighterInfoConnector.jsx';
 import About from './presenters/About/About.jsx';
-import './global.css'
+import './global.scss'
 import Home from './presenters/Home/Home.jsx';
 
 

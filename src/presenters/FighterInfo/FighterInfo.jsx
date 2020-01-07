@@ -1,6 +1,6 @@
 import React from 'react'
 import NavBar from '../NavBar/NavBar.jsx'
-import './fighter-info.css'
+import './fighter-info.scss'
 import FrameDataConnector from '../../connectors/FrameDataConnector';
 
 const FighterInfo = ({ fighter }) => {

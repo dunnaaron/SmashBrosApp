@@ -1,0 +1,45 @@
+.fighters {
+  font-family: 'Noto Sans', sans-serif;
+  display: grid;
+  justify-items: center;
+  grid-gap: 1px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+  .fighter-info-link {
+    text-decoration: none;
+    width: 100%;
+
+    .fighter-container {
+      position: relative;
+
+      .thumbnail {
+        width: 100%;
+        border-radius: 5px;
+      }
+
+      &:hover .fighter {
+        opacity: 1;
+        color: white;
+      }
+
+      .fighter {
+        background: rgba(0,0,0,0.7);
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        opacity: 0;
+        -webkit-transition: all 0.2s ease-in-out 0s;
+        -moz-transition: all 0.2s ease-in-out 0s;
+        transition: all 0.2s ease-in-out 0s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+      }
+    }
+  }
+}
