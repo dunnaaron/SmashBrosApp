@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../../assets/ssbu-logo.png'
-import './nav-bar.css';
+import './nav-bar.scss';
 import { Link } from "react-router-dom";
 
 
@@ -25,3 +25,4 @@ const NavBar = () => (
 )
 
 export default NavBar
+
