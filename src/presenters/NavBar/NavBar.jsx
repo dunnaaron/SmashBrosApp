@@ -3,6 +3,7 @@ import logo from '../../assets/ssbu-logo.png'
 import './nav-bar.scss';
 import { Link } from "react-router-dom";
 import HamburgerConnector from '../../connectors/HamburgerConnector';
+import { navLinks } from '../../common/navigation'
 
 
 const NavBar = () => (
@@ -17,10 +18,11 @@ const NavBar = () => (
 
 const DesktopNavBar = ({logo}) => (
   <div className='nav-items desktop'>
-    <Link className='nav-item' to='/'>Home</Link>
-    <Link className='nav-item' to='/'>Calculators</Link>
-    <Link className='nav-item' to='/'>Register</Link>
-    <Link className='nav-item' to='/About'>About</Link>
+     {
+       navLinks.map((page, index) => (
+         <Link className='nav-item' key={index} to={page.route}>{page.name}</Link>
+       ))
+     }
   </div>
 )
 

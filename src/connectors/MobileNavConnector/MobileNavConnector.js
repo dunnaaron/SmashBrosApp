@@ -5,4 +5,8 @@ const mapStateToProps = state => ({
   navOpen: state.isMobileNavOpen,
 });
 
-export default connect(mapStateToProps)(MobileNav);
+const mapDispatchToProps = dispatch => ({
+  toggleMobileNav: () => dispatch({type: 'TOGGLE_MOBILE_NAV'}),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(MobileNav);
