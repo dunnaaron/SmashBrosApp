@@ -1,0 +1,38 @@
+.modal {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: black;
+  z-index: 10;
+  transition: 0.5s;
+
+  .nav-links {
+    display: flex;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .5s linear;
+
+    .nav-item {
+      color: white;
+      font-size: 30;
+      margin-bottom: 10;
+      text-decoration: none;
+      font-family: 'Noto Sans', sans-serif;
+    }
+  }
+}
+
+.nav-links {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+}
