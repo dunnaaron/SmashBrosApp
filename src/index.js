@@ -5,6 +5,8 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import reducer from './reducers/reducer.js'
 import FighterInfoConnector from './connectors/FighterInfoConnector/FighterInfoConnector.jsx';
+import Calculators from './presenters/Calculators/Calculators.jsx';
+import Register from './presenters/Register/Register.jsx';
 import About from './presenters/About/About.jsx';
 import './global.scss'
 import Home from './presenters/Home/Home.jsx';
@@ -23,6 +25,8 @@ ReactDOM.render(
     <MobileNavConnector />
     <Route path="/" exact component={Home} />
     <Route path="/Fighter-info" component={FighterInfoConnector} />
+    <Route path='/Calculators' component={Calculators} />
+    <Route path='/Register' component={Register} />
     <Route path='/About' component={About} />
   </Router>
 </Provider>, document.getElementById('root'));
