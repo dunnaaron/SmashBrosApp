@@ -11,12 +11,12 @@ const NavBar = () => (
     <Link className='logo-link' to="/">
       <img src={logo} className='logo'/>
     </Link>   
-    <DesktopNavBar logo={logo} />
+    <DesktopNavBar />
     <MobileNavBar />
   </div>
 )
 
-const DesktopNavBar = ({logo}) => (
+const DesktopNavBar = () => (
   <div className='nav-items desktop'>
      {
        navLinks.map((page, index) => (
